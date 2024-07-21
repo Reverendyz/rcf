@@ -1,11 +1,11 @@
 package main
 
 import (
-	"reverendyz/rcf/internal/db"
-	"reverendyz/rcf/internal/logger"
-	"reverendyz/rcf/internal/router"
-	"reverendyz/rcf/internal/types"
-	"reverendyz/rcf/internal/utils"
+	"github.com/reverendyz/rcf/internal/db"
+	"github.com/reverendyz/rcf/internal/logger"
+	"github.com/reverendyz/rcf/internal/router"
+	"github.com/reverendyz/rcf/internal/types"
+	"github.com/reverendyz/rcf/internal/utils"
 
 	"go.uber.org/zap"
 )

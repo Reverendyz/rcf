@@ -1,7 +1,7 @@
 package router
 
 import (
-	"reverendyz/rcf/internal/handlers"
+	"github.com/reverendyz/rcf/internal/handlers"
 
 	"github.com/gin-gonic/gin"
 )

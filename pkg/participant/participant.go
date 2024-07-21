@@ -1,8 +1,8 @@
 package participant
 
 import (
-	"reverendyz/rcf/internal/db"
-	"reverendyz/rcf/internal/types"
+	"github.com/reverendyz/rcf/internal/db"
+	"github.com/reverendyz/rcf/internal/types"
 )
 
 func SaveParticipant(participant *types.Participant) error {

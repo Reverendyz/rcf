@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/reverendyz/rcf/internal/utils"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -20,10 +21,7 @@ var (
 )
 
 func Init() error {
-	dbTz := "America/Sao_Paulo"
-	if os.Getenv("DB_TZ") != "" {
-		dbTz = os.Getenv("DB_TZ")
-	}
+	dbTz := utils.GetenvOrDefault("DB_TZ", "America/Sao_Paulo")
 	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s TimeZone=%s dbname=%s sslmode=disable", dbHost, dbPort, dbUser, dbPass, dbTz, dbName)
 	DB, err = gorm.Open(postgres.Open(connStr), &gorm.Config{})
 	if err != nil {
