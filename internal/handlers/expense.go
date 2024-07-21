@@ -2,10 +2,11 @@ package handlers
 
 import (
 	"net/http"
-	"reverendyz/rcf/internal/types"
-	"reverendyz/rcf/internal/utils"
-	"reverendyz/rcf/pkg/expense"
 	"strconv"
+
+	"github.com/reverendyz/rcf/internal/types"
+	"github.com/reverendyz/rcf/internal/utils"
+	"github.com/reverendyz/rcf/pkg/expense"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"

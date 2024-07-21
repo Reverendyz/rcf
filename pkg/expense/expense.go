@@ -2,8 +2,9 @@ package expense
 
 import (
 	"errors"
-	"reverendyz/rcf/internal/db"
-	"reverendyz/rcf/internal/types"
+
+	"github.com/reverendyz/rcf/internal/db"
+	"github.com/reverendyz/rcf/internal/types"
 )
 
 func SaveExpense(expense *types.Expense) error {

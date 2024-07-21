@@ -9,4 +9,5 @@ type Expense struct {
 	Type         string         `json:"type"`
 	Participants []*Participant `gorm:"many2many:participant_expense;"`
 	Status       bool           `json:"status"`
+	IsActive     bool           `json:"is_active"`
 }

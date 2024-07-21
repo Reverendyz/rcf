@@ -1,4 +1,4 @@
-module reverendyz/rcf
+module github.com/reverendyz/rcf
 
 go 1.21.0
 
