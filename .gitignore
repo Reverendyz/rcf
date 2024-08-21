@@ -1,0 +1,64 @@
+# Node.js / React
+node_modules/
+build/
+.env
+.cache/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.DS_Store
+*.log
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Coverage
+coverage/
+*.lcov
+
+# Go specific
+/bin/
+/pkg/
+/dist/
+/vendor/
+/.env
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Compiled object files and binaries
+*.o
+*.a
+*.out
+
+# Golang specific backup files
+*_test.go
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.lock
+
+# IDE specific files (optional, depending on your setup)
+.vscode/
+.idea/
+*.swp
+
+# Go build and dependency directories
+/build/
