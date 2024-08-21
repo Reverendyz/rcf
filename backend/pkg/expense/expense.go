@@ -22,7 +22,7 @@ func SaveExpense(expense *types.Expense) error {
 
 func ListExpenses() ([]types.Expense, error) {
 	var expenses []types.Expense
-	result := db.GetDB().Find(&expenses)
+	result := db.GetDB().Preload("Participants").Find(&expenses)
 	return expenses, result.Error
 }
 

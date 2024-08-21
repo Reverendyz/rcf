@@ -20,6 +20,6 @@ func SaveParticipant(participant *types.Participant) error {
 
 func ListParticipants() ([]types.Participant, error) {
 	var participants = []types.Participant{}
-	result := db.GetDB().Find(&participants)
+	result := db.GetDB().Preload("Expenses").Find(&participants)
 	return participants, result.Error
 }
