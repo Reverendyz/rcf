@@ -1,6 +1,7 @@
 package db
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -21,6 +22,22 @@ var (
 )
 
 func Init() error {
+	if len(dbHost) == 0 {
+		return errors.New("DB_HOST environment variable must be set")
+	}
+	if len(dbUser) == 0 {
+		return errors.New("DB_USER environment variable must be set")
+	}
+	if len(dbPort) == 0 {
+		return errors.New("DB_PORT environment variable must be set")
+	}
+	if len(dbPass) == 0 {
+		return errors.New("DB_PASS environment variable must be set")
+	}
+	if len(dbName) == 0 {
+		return errors.New("DB_NAME environment variable must be set")
+	}
+
 	dbTz := utils.GetenvOrDefault("DB_TZ", "America/Sao_Paulo")
 	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s TimeZone=%s dbname=%s sslmode=disable", dbHost, dbPort, dbUser, dbPass, dbTz, dbName)
 	DB, err = gorm.Open(postgres.Open(connStr), &gorm.Config{})

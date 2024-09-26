@@ -26,6 +26,15 @@ func ListExpenses() ([]types.Expense, error) {
 	return expenses, result.Error
 }
 
+func DeleteExpense(id int) error {
+	db := db.GetDB()
+
+	if err := db.Delete(&types.Expense{}, id).Error; err != nil {
+		return err
+	}
+	return nil
+}
+
 func BindParticipantToExpense(expenseID uint, participantID uint) error {
 	var expense types.Expense
 	var participant types.Participant

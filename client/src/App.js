@@ -11,13 +11,13 @@ function App() {
         <div className="content">
           <nav>
             <Link to="/">
-              <button>Home</button>
+              <button className='nav-button'>Home</button>
             </Link>
             <Link to="/bill">
-              <button>Gerenciar Contas</button>
+              <button className='nav-button'>Gerenciar Contas</button>
             </Link>
             <Link to="/account">
-              <button>Gerenciar Usuários</button>
+              <button className='nav-button'>Gerenciar Usuários</button>
             </Link>
           </nav>
           <div className='page'>

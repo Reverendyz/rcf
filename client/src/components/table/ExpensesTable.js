@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Datatable({ data, type }) {
+function Datatable({ data }) {
   if (!Array.isArray(data)) {
     console.log(typeof data)
     if (typeof data === 'string') {
@@ -9,6 +9,8 @@ function Datatable({ data, type }) {
     return <div>Error: Data is not an array.</div>;
   }
   return (
+    <div>
+
     <table>
       <thead>
         <tr>
@@ -18,7 +20,7 @@ function Datatable({ data, type }) {
           <th>Type</th>
           <th>Participants</th>
           <th>Status</th>
-          <th>Is Active</th>
+          <th>Recorrência</th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +35,7 @@ function Datatable({ data, type }) {
                 <ul className="no-bullets">
                   {item.Participants.map((participant) => (
                     <li key={participant.ID} style={{ listStyleType: 'none', alignContent: 'center' }}>
-                      <Link to={`/${type === 'expenses' ? 'participants' : 'expenses'}/${participant.ID}`}>
+                      <Link to={`/participants/${participant.name}`}>
                         {participant.name}
                       </Link>
                     </li>
@@ -49,6 +51,7 @@ function Datatable({ data, type }) {
         ))}
       </tbody>
     </table>
+  </div>
   );
 };
 

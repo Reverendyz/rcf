@@ -33,6 +33,14 @@ func ListExpenses(c *gin.Context) {
 	c.IndentedJSON(http.StatusAccepted, gin.H{"expenses": exp})
 }
 
+func DeleteExpense(c *gin.Context) {
+	id, err := strconv.Atoi(c.Param("id"))
+	utils.HandleError(err)
+	err = expense.DeleteExpense(id)
+	utils.HandleError(err)
+	c.IndentedJSON(http.StatusAccepted, gin.H{"message": "ok"})
+}
+
 func BindParticipantToExpense(c *gin.Context) {
 	eID, err := strconv.Atoi(c.Param("expenseID"))
 	utils.HandleHandlerError(err, c)
